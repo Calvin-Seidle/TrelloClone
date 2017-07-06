@@ -1,0 +1,40 @@
+<% if notice %>
+	<div class="alert alert-info alert-dismissable fade in">
+	  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	  <strong><p id="notice"><%= notice %></p></strong>
+	</div>
+<% end %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @task.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @task.description %>
+</p>
+
+<p>
+  <strong>Created: </strong>
+  <%= @task.created_at.strftime("%d %B %Y at %I:%M%p") %>
+</p>
+    
+
+<p>
+  <strong>Due Date:</strong>
+  <%= @task.due_date %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @task.content %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @task.state %>
+</p>
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>
