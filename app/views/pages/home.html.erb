@@ -1,7 +1,31 @@
-<div class="jumbotron">
-	<h1><i class="fa fa-bomb"></i><i class="fa fa-bomb"></i><i class="fa fa-bomb"></i>...</h1>
-	<p>Blah blah blah</p>
-	<% if !current_user %>
-		<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
-	<% end %>
+<div class="row">
+	<div class="jumbotron">
+		<h1><i class="fa fa-bomb"></i><i class="fa fa-bomb"></i><i class="fa fa-bomb"></i>...</h1>
+		<p>Blah blah blah</p>
+		<% if !current_user %>
+			<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+		<% end %>
+	</div>
 </div>
+<%if user_signed_in? %>
+	<div class="row">
+		
+		<% @projects.each do |project| %>
+			<div class="col-md-3 col-xs-12">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<%= project.title %>
+					</div>
+					<div class="panel-body">
+						<%= project.user %>
+						<% @tasks.each do |task| %>
+							<p><%= task.title %></p>
+							<p><%= link_to 'Show', project %></p>
+						<% end %>
+					</div>
+				</div>
+			</div>		
+		<% end %>
+		
+	</div>
+<% end %>

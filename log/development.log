@@ -5208,3 +5208,1691 @@ Processing by PagesController#home as HTML
 Completed 200 OK in 2971ms (Views: 2944.1ms | ActiveRecord: 4.7ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-07-06 15:07:30 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pages/home.html.erb within layouts/application (34.7ms)
+  Rendered layouts/_nav.html.erb (3.0ms)
+Completed 200 OK in 732ms (Views: 701.0ms | ActiveRecord: 2.2ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateProjects (20170706131712)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "content" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (3.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170706131712"]]
+  [1m[35m (158.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.6ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2017-07-06 15:17:47 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pages/home.html.erb within layouts/application (30.0ms)
+  Rendered layouts/_nav.html.erb (2.7ms)
+Completed 200 OK in 667ms (Views: 661.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-06 15:17:55 +0200
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (4.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (27.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_nav.html.erb (5.9ms)
+Completed 200 OK in 333ms (Views: 301.6ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2017-07-06 15:19:44 +0200
+Processing by ProjectsController#new as HTML
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (134.0ms)
+  Rendered projects/new.html.erb within layouts/application (136.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_nav.html.erb (58.3ms)
+Completed 200 OK in 398ms (Views: 375.0ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2017-07-06 15:20:00 +0200
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ISh/HZ6HYnns9PhIXxG5/tI00F/OzTzGqrIBGX6HYY/lI8QuA7dCuGyIMx4cb/Rtw8L0YMuxm67+gc2ZZQPoXA==", "project"=>{"title"=>"test project", "description"=>"blah", "content"=>"blah", "user_id"=>""}, "commit"=>"Create Project"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 1.4ms)
+
+
+  
+NoMethodError (undefined method `projects' for #<User:0x007f629a4a2f78>):
+  
+app/controllers/projects_controller.rb:27:in `create'
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (14.6ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (62.1ms)
+Started POST "/projects" for 127.0.0.1 at 2017-07-06 15:20:51 +0200
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ISh/HZ6HYnns9PhIXxG5/tI00F/OzTzGqrIBGX6HYY/lI8QuA7dCuGyIMx4cb/Rtw8L0YMuxm67+gc2ZZQPoXA==", "project"=>{"title"=>"test project", "description"=>"blah", "content"=>"blah", "user_id"=>""}, "commit"=>"Create Project"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 3.6ms)
+
+
+  
+NoMethodError (undefined method `projects' for #<User:0x007f6298967e70>):
+  
+app/controllers/projects_controller.rb:28:in `create'
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (15.2ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.3ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.2ms)
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.6ms)
+Started POST "/projects" for 127.0.0.1 at 2017-07-06 15:21:15 +0200
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ISh/HZ6HYnns9PhIXxG5/tI00F/OzTzGqrIBGX6HYY/lI8QuA7dCuGyIMx4cb/Rtw8L0YMuxm67+gc2ZZQPoXA==", "project"=>{"title"=>"test project", "description"=>"blah", "content"=>"blah", "user_id"=>"1"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 0.7ms)
+
+
+  
+NoMethodError (undefined method `projects' for #<User:0x007f629a228810>):
+  
+app/controllers/projects_controller.rb:28:in `create'
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.5ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (48.1ms)
+Started POST "/projects" for 127.0.0.1 at 2017-07-06 15:22:04 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ISh/HZ6HYnns9PhIXxG5/tI00F/OzTzGqrIBGX6HYY/lI8QuA7dCuGyIMx4cb/Rtw8L0YMuxm67+gc2ZZQPoXA==", "project"=>{"title"=>"test project", "description"=>"blah", "content"=>"blah", "user_id"=>"1"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 2.3ms)
+
+
+  
+NoMethodError (undefined method `projects' for #<User:0x000000042729b0>):
+  
+app/controllers/projects_controller.rb:28:in `create'
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.4ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (52.4ms)
+Started GET "/projects/new" for 127.0.0.1 at 2017-07-06 15:22:27 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (120.1ms)
+  Rendered projects/new.html.erb within layouts/application (123.1ms)
+Completed 500 Internal Server Error in 185ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (Association :user_id not found):
+     5:     <%= f.input :title %>
+     6:     <%= f.input :description %>
+     7:     <%= f.input :content %>
+     8:     <%= f.association :user_id %>
+     9:   </div>
+    10: 
+    11:   <div class="form-actions">
+  
+app/views/projects/_form.html.erb:8:in `block in _app_views_projects__form_html_erb__2417825309818396085_35123800'
+app/views/projects/_form.html.erb:1:in `_app_views_projects__form_html_erb__2417825309818396085_35123800'
+app/views/projects/new.html.erb:3:in `_app_views_projects_new_html_erb___4311445904388426352_35194000'
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (23.2ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.9ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (58.4ms)
+Started GET "/projects/new" for 127.0.0.1 at 2017-07-06 15:22:40 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (8.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (30.9ms)
+  Rendered projects/new.html.erb within layouts/application (33.4ms)
+  Rendered layouts/_nav.html.erb (2.8ms)
+Completed 200 OK in 931ms (Views: 917.6ms | ActiveRecord: 8.6ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2017-07-06 15:22:52 +0200
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8CH89AcciSKmPXOxj+2xRpUR/vyAQRHAjxgk6p41xHorOhL1SXK9fzTdN8puWHsxd1KAdEe6Kf1ZFx9Z9n2sHA==", "project"=>{"title"=>"test", "description"=>"test", "content"=>"test"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 96ms (ActiveRecord: 5.5ms)
+
+
+  
+NoMethodError (undefined method `projects' for #<User:0x007f8699492bc8>):
+  
+app/controllers/projects_controller.rb:28:in `create'
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.0ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (45.3ms)
+Started POST "/projects" for 127.0.0.1 at 2017-07-06 15:23:26 +0200
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8CH89AcciSKmPXOxj+2xRpUR/vyAQRHAjxgk6p41xHorOhL1SXK9fzTdN8puWHsxd1KAdEe6Kf1ZFx9Z9n2sHA==", "project"=>{"title"=>"test", "description"=>"test", "content"=>"test"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 2.4ms)
+
+
+  
+NoMethodError (undefined method `projects' for #<User:0x007f8698f6dd00>):
+  
+app/controllers/projects_controller.rb:28:in `create'
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.0ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.3ms)
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (46.1ms)
+Started POST "/projects" for 127.0.0.1 at 2017-07-06 15:23:31 +0200
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8CH89AcciSKmPXOxj+2xRpUR/vyAQRHAjxgk6p41xHorOhL1SXK9fzTdN8puWHsxd1KAdEe6Kf1ZFx9Z9n2sHA==", "project"=>{"title"=>"test", "description"=>"test", "content"=>"test"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 1.7ms)
+
+
+  
+NoMethodError (undefined method `projects' for #<User:0x007f86993d5500>):
+  
+app/controllers/projects_controller.rb:28:in `create'
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.9ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (47.1ms)
+Started POST "/projects" for 127.0.0.1 at 2017-07-06 15:24:44 +0200
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8CH89AcciSKmPXOxj+2xRpUR/vyAQRHAjxgk6p41xHorOhL1SXK9fzTdN8puWHsxd1KAdEe6Kf1ZFx9Z9n2sHA==", "project"=>{"title"=>"test", "description"=>"test", "content"=>"test"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[32mINSERT INTO "projects" ("title", "description", "content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "test"], ["description", "test"], ["content", "test"], ["user_id", 1], ["created_at", "2017-07-06 13:24:44.788634"], ["updated_at", "2017-07-06 13:24:44.788634"]]
+  [1m[35m (88.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 235ms (ActiveRecord: 95.6ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2017-07-06 15:24:44 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  Rendered projects/show.html.erb within layouts/application (9.7ms)
+  Rendered layouts/_nav.html.erb (8.0ms)
+Completed 200 OK in 292ms (Views: 275.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-06 15:24:49 +0200
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (9.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered projects/index.html.erb within layouts/application (18.6ms)
+  Rendered layouts/_nav.html.erb (2.5ms)
+Completed 200 OK in 352ms (Views: 325.1ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-06 15:25:45 +0200
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered projects/index.html.erb within layouts/application (23.7ms)
+  Rendered layouts/_nav.html.erb (2.6ms)
+Completed 200 OK in 268ms (Views: 215.7ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-06 15:25:49 +0200
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered projects/index.html.erb within layouts/application (23.7ms)
+  Rendered layouts/_nav.html.erb (2.5ms)
+Completed 200 OK in 250ms (Views: 235.2ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-06 15:26:09 +0200
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered projects/index.html.erb within layouts/application (18.6ms)
+  Rendered layouts/_nav.html.erb (3.3ms)
+Completed 200 OK in 271ms (Views: 254.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2017-07-06 15:29:53 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (6.1ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  Rendered projects/show.html.erb within layouts/application (6.2ms)
+  Rendered layouts/_nav.html.erb (2.6ms)
+Completed 200 OK in 297ms (Views: 264.0ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-06 15:29:55 +0200
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered projects/index.html.erb within layouts/application (13.7ms)
+  Rendered layouts/_nav.html.erb (2.4ms)
+Completed 200 OK in 286ms (Views: 260.4ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-06 15:30:03 +0200
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered projects/index.html.erb within layouts/application (16.2ms)
+  Rendered layouts/_nav.html.erb (2.3ms)
+Completed 200 OK in 318ms (Views: 293.3ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 15:30:06 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pages/home.html.erb within layouts/application (16.6ms)
+  Rendered layouts/_nav.html.erb (2.6ms)
+Completed 200 OK in 340ms (Views: 330.1ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 15:30:10 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pages/home.html.erb within layouts/application (10.8ms)
+  Rendered layouts/_nav.html.erb (2.5ms)
+Completed 200 OK in 221ms (Views: 208.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 15:33:50 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (21.1ms)
+  Rendered layouts/_nav.html.erb (2.5ms)
+Completed 200 OK in 239ms (Views: 181.9ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 15:34:06 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (11.0ms)
+  Rendered layouts/_nav.html.erb (3.8ms)
+Completed 200 OK in 280ms (Views: 266.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 15:36:38 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (59.2ms)
+Completed 500 Internal Server Error in 93ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `User' for #<Project:0x007f86a8432188>
+Did you mean?  user=):
+    12: 			<%= project.title %>
+    13: 		</div>
+    14: 		<div class="panel-body">
+    15: 			<%= project.User %>
+    16: 		</div>
+    17: 	</div>	
+    18: <% end %>
+  
+app/views/pages/home.html.erb:15:in `block in _app_views_pages_home_html_erb__4368766913081509744_70108042603960'
+app/views/pages/home.html.erb:9:in `_app_views_pages_home_html_erb__4368766913081509744_70108042603960'
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.9ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.8ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (49.9ms)
+Started GET "/" for 127.0.0.1 at 2017-07-06 15:36:46 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (12.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (7.3ms)
+  Rendered layouts/_nav.html.erb (2.9ms)
+Completed 200 OK in 257ms (Views: 233.2ms | ActiveRecord: 13.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 15:38:05 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (8.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_nav.html.erb (2.5ms)
+Completed 200 OK in 222ms (Views: 205.4ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 15:38:46 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (9.4ms)
+  Rendered layouts/_nav.html.erb (2.8ms)
+Completed 200 OK in 272ms (Views: 253.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 15:38:59 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (10.5ms)
+  Rendered layouts/_nav.html.erb (2.5ms)
+Completed 200 OK in 286ms (Views: 271.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 15:39:21 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (7.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (13.1ms)
+  Rendered layouts/_nav.html.erb (2.5ms)
+Completed 200 OK in 292ms (Views: 267.9ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 15:39:36 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (9.2ms)
+  Rendered layouts/_nav.html.erb (2.5ms)
+Completed 200 OK in 274ms (Views: 258.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 15:41:44 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (20.8ms)
+  Rendered layouts/_nav.html.erb (2.7ms)
+Completed 200 OK in 234ms (Views: 160.2ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 15:42:47 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (1.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (37.6ms)
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 7.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    16: 				</div>
+    17: 				<div class="panel-body">
+    18: 					<%= project.user %>
+    19: 					<% @task.each do |task| %>
+    20: 						<%= task.title %>
+    21: 					<% end %>
+    22: 				</div>
+  
+app/views/pages/home.html.erb:19:in `block in _app_views_pages_home_html_erb__4368766913081509744_70108037203160'
+app/views/pages/home.html.erb:12:in `_app_views_pages_home_html_erb__4368766913081509744_70108037203160'
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (18.0ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (53.9ms)
+Started GET "/" for 127.0.0.1 at 2017-07-06 15:42:57 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (45.9ms)
+  Rendered layouts/_nav.html.erb (2.6ms)
+Completed 200 OK in 252ms (Views: 232.8ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 15:43:28 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (10.5ms)
+  Rendered layouts/_nav.html.erb (5.6ms)
+Completed 200 OK in 271ms (Views: 253.6ms | ActiveRecord: 1.7ms)
+
+
+  [1m[36mTask Load (11.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPrjectIdToTasks (20170706134530)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "tasks" ADD "project_id" integer[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170706134530"]]
+  [1m[35m (124.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.9ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.7ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mTask Load (11.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+Started GET "/" for 127.0.0.1 at 2017-07-06 15:46:32 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (40.3ms)
+  Rendered layouts/_nav.html.erb (2.5ms)
+Completed 200 OK in 239ms (Views: 181.0ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 15:48:07 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 2.1ms)
+
+
+  
+NoMethodError (undefined method `id' for #<Class:0x007f86994f8568>
+Did you mean?  ids):
+  
+app/controllers/pages_controller.rb:5:in `home'
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.3ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.9ms)
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (48.9ms)
+Started GET "/" for 127.0.0.1 at 2017-07-06 15:48:17 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "projects"."id" FROM "projects"[0m
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (1.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (43.3ms)
+  Rendered layouts/_nav.html.erb (4.4ms)
+Completed 200 OK in 338ms (Views: 267.5ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 15:50:45 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (42.5ms)
+  Rendered layouts/_nav.html.erb (2.5ms)
+Completed 200 OK in 293ms (Views: 236.7ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 15:50:54 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (16.6ms)
+  Rendered layouts/_nav.html.erb (2.6ms)
+Completed 200 OK in 262ms (Views: 245.7ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 15:53:09 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (11.0ms)
+  Rendered layouts/_nav.html.erb (2.5ms)
+Completed 200 OK in 197ms (Views: 183.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 15:54:30 +0200
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.4) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.4) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.4) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.4) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.4) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.4) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.4) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.2ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (53.2ms)
+  [1m[35m (73.6ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (56.0ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT GET_LOCK('8649881405270467740', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to DeviseCreateUsers (20170706065828)
+  [1m[35m (59.0ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (122.0ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  [1m[35m (111.1ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) [0m
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170706065828')[0m
+  [1m[35m (25.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTasks (20170706082643)
+  [1m[35m (53.2ms)[0m  [1m[35mCREATE TABLE `tasks` (`id` int AUTO_INCREMENT PRIMARY KEY, `content` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170706082643')[0m
+  [1m[35m (22.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserIdToTasks (20170706085805)
+  [1m[35m (129.8ms)[0m  [1m[35mALTER TABLE `tasks` ADD `user_id` int[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170706085805')[0m
+  [1m[35m (28.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddStateToTasks (20170706092746)
+  [1m[35m (125.5ms)[0m  [1m[35mALTER TABLE `tasks` ADD `state` varchar(255) DEFAULT 'to_do'[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170706092746')[0m
+  [1m[35m (27.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDetailsToTasks (20170706113359)
+  [1m[35m (126.4ms)[0m  [1m[35mALTER TABLE `tasks` ADD `title` varchar(255)[0m
+  [1m[35m (151.7ms)[0m  [1m[35mALTER TABLE `tasks` ADD `description` text[0m
+  [1m[35m (133.7ms)[0m  [1m[35mALTER TABLE `tasks` ADD `due_date` datetime[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170706113359')[0m
+  [1m[35m (29.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProjects (20170706131712)
+  [1m[35m (56.9ms)[0m  [1m[35mCREATE TABLE `projects` (`id` int AUTO_INCREMENT PRIMARY KEY, `title` varchar(255), `description` varchar(255), `content` varchar(255), `user_id` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170706131712')[0m
+  [1m[35m (24.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPrjectIdToTasks (20170706134530)
+  [1m[35m (135.6ms)[0m  [1m[35mALTER TABLE `tasks` ADD `project_id` int[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170706134530')[0m
+  [1m[35m (32.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-07-06 13:54:55', '2017-07-06 13:54:55')[0m
+  [1m[35m (30.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('8649881405270467740')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSHOW CREATE TABLE `projects`[0m
+  [1m[35m (2.2ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'projects'[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSHOW CREATE TABLE `tasks`[0m
+  [1m[35m (3.0ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'tasks'[0m
+  [1m[35m (2.6ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (1.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+Started GET "/" for 127.0.0.1 at 2017-07-06 15:56:28 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 3.1ms)
+
+
+  
+NoMethodError (undefined method `projects' for nil:NilClass):
+  
+app/controllers/pages_controller.rb:4:in `home'
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.8ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (59.1ms)
+Started GET "/" for 127.0.0.1 at 2017-07-06 15:57:27 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `projects' for nil:NilClass):
+  
+app/controllers/pages_controller.rb:4:in `home'
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (15.2ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.7ms)
+Started GET "/" for 127.0.0.1 at 2017-07-06 15:57:49 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `projects' for nil:NilClass):
+  
+app/controllers/pages_controller.rb:4:in `home'
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (14.4ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (66.9ms)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+Started GET "/" for 127.0.0.1 at 2017-07-06 15:59:48 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `projects' for nil:NilClass):
+  
+app/controllers/pages_controller.rb:4:in `home'
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.4ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (50.1ms)
+Started GET "/" for 127.0.0.1 at 2017-07-06 16:00:49 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_nav.html.erb (2.2ms)
+Completed 200 OK in 664ms (Views: 652.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-06 16:00:59 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (150.9ms)
+  Rendered layouts/_nav.html.erb (2.8ms)
+Completed 200 OK in 399ms (Views: 326.9ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-07-06 16:01:02 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (9.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (28.7ms)
+  Rendered layouts/_nav.html.erb (2.5ms)
+Completed 200 OK in 292ms (Views: 288.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-07-06 16:01:11 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fY61jzPiwn/+Ac3bi8WxYMdJMyCUqK+x2IGtT6Rpg08PrkevTWBKt6JA8tOFUR6cp0719YMEHXCByGTKfNo0PQ==", "user"=>{"email"=>"calvin@littlepig.cc", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'calvin@littlepig.cc' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('calvin@littlepig.cc', '$2a$11$UDXJm/jeeluBFUupx3nxLuYfEYEYfvspMAaVJCsdOk06KTqgJ67ei', '2017-07-06 14:01:12', '2017-07-06 14:01:12')[0m
+  [1m[35m (100.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE `users` SET `sign_in_count` = 1, `current_sign_in_at` = '2017-07-06 14:01:12', `last_sign_in_at` = '2017-07-06 14:01:12', `current_sign_in_ip` = '127.0.0.1', `last_sign_in_ip` = '127.0.0.1' WHERE `users`.`id` = 1[0m
+  [1m[35m (25.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 505ms (ActiveRecord: 129.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 16:01:12 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT `projects`.* FROM `projects` WHERE `projects`.`user_id` = 1[0m
+  Rendered pages/home.html.erb within layouts/application (14.0ms)
+  Rendered layouts/_nav.html.erb (2.5ms)
+Completed 200 OK in 252ms (Views: 204.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-06 16:01:27 +0200
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT `projects`.* FROM `projects` WHERE `projects`.`user_id` = 1[0m
+  Rendered projects/index.html.erb within layouts/application (21.3ms)
+  Rendered layouts/_nav.html.erb (2.8ms)
+Completed 200 OK in 306ms (Views: 282.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2017-07-06 16:01:31 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (44.0ms)
+  Rendered projects/new.html.erb within layouts/application (54.9ms)
+  Rendered layouts/_nav.html.erb (2.6ms)
+Completed 200 OK in 330ms (Views: 268.3ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2017-07-06 16:02:15 +0200
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2AFzuMmWhkFRe5T+kfYkCAxwlJkBA6cVEHu1Qszppd0cCsiLVKamgNEHX6jSiGmbHYawpgR/AH1ESHnC120sDg==", "project"=>{"title"=>"This is my first project", "description"=>"this is a test project", "content"=>"blah blah blah"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO `projects` (`title`, `description`, `content`, `user_id`, `created_at`, `updated_at`) VALUES ('This is my first project', 'this is a test project', 'blah blah blah', 1, '2017-07-06 14:02:15', '2017-07-06 14:02:15')[0m
+  [1m[35m (36.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 119ms (ActiveRecord: 40.0ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2017-07-06 16:02:15 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT  `projects`.* FROM `projects` WHERE `projects`.`id` = 1 LIMIT 1[0m
+  Rendering projects/show.html.erb within layouts/application
+  Rendered projects/show.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_nav.html.erb (2.4ms)
+Completed 200 OK in 199ms (Views: 187.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2017-07-06 16:02:32 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  `projects`.* FROM `projects` WHERE `projects`.`id` = 1 LIMIT 1[0m
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered projects/show.html.erb within layouts/application (11.4ms)
+  Rendered layouts/_nav.html.erb (4.0ms)
+Completed 200 OK in 218ms (Views: 203.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-06 16:02:37 +0200
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT `projects`.* FROM `projects` WHERE `projects`.`user_id` = 1[0m
+  Rendered projects/index.html.erb within layouts/application (13.9ms)
+  Rendered layouts/_nav.html.erb (2.4ms)
+Completed 200 OK in 248ms (Views: 218.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 16:02:51 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT `projects`.* FROM `projects` WHERE `projects`.`user_id` = 1[0m
+  [1m[36mTask Load (1.1ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 1[0m
+  Rendered pages/home.html.erb within layouts/application (25.5ms)
+  Rendered layouts/_nav.html.erb (2.5ms)
+Completed 200 OK in 242ms (Views: 229.2ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 16:14:27 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT `projects`.* FROM `projects` WHERE `projects`.`user_id` = 1[0m
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 1[0m
+  Rendered pages/home.html.erb within layouts/application (27.0ms)
+  Rendered layouts/_nav.html.erb (2.5ms)
+Completed 200 OK in 243ms (Views: 183.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-06 16:14:43 +0200
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (3.3ms)[0m  [1m[34mSELECT `projects`.* FROM `projects` WHERE `projects`.`user_id` = 1[0m
+  Rendered projects/index.html.erb within layouts/application (13.2ms)
+  Rendered layouts/_nav.html.erb (2.7ms)
+Completed 200 OK in 305ms (Views: 258.6ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2017-07-06 16:14:47 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  `projects`.* FROM `projects` WHERE `projects`.`id` = 1 LIMIT 1[0m
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 1[0m
+  Rendered projects/show.html.erb within layouts/application (17.0ms)
+  Rendered layouts/_nav.html.erb (2.3ms)
+Completed 200 OK in 227ms (Views: 208.1ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-06 16:14:55 +0200
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (2.5ms)[0m  [1m[34mSELECT `projects`.* FROM `projects` WHERE `projects`.`user_id` = 1[0m
+  Rendered projects/index.html.erb within layouts/application (15.6ms)
+  Rendered layouts/_nav.html.erb (3.3ms)
+Completed 200 OK in 332ms (Views: 315.7ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-07-06 16:14:57 +0200
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (4.2ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 1 AND `tasks`.`state` = 'to_do'[0m
+  Rendered partials/_to_do.html.erb (7.6ms)
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 1 AND `tasks`.`state` = 'doing'[0m
+  Rendered partials/_doing.html.erb (3.6ms)
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 1 AND `tasks`.`state` = 'done'[0m
+  Rendered partials/_done.html.erb (3.1ms)
+  Rendered tasks/index.html.erb within layouts/application (20.1ms)
+  Rendered layouts/_nav.html.erb (2.5ms)
+Completed 200 OK in 229ms (Views: 214.1ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2017-07-06 16:14:59 +0200
+Processing by TasksController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (86.4ms)
+  Rendered tasks/new.html.erb within layouts/application (90.5ms)
+  Rendered layouts/_nav.html.erb (2.5ms)
+Completed 200 OK in 310ms (Views: 270.3ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2017-07-06 16:15:30 +0200
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mP4h5m+W+HOHcwuMI3xU9GAM+amnd+5Ki6BzcivgW+t4/fGa4FznZ6jpckpCxRhzHSMUD/1pH5k0c8bpQ3srAA==", "task"=>{"title"=>"test task1", "description"=>"test", "due_date(1i)"=>"2017", "due_date(2i)"=>"7", "due_date(3i)"=>"6", "due_date(4i)"=>"16", "due_date(5i)"=>"30", "content"=>"blah blah blah "}, "commit"=>"Create Task"}
+  [1m[36mUser Load (15.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Unpermitted parameter: description
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `tasks` (`content`, `created_at`, `updated_at`, `user_id`, `title`, `due_date`) VALUES ('blah blah blah ', '2017-07-06 14:15:30', '2017-07-06 14:15:30', 1, 'test task1', '2017-07-06 16:30:00')[0m
+  [1m[35m (42.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/tasks/1
+Completed 302 Found in 96ms (ActiveRecord: 59.4ms)
+
+
+Started GET "/tasks/1" for 127.0.0.1 at 2017-07-06 16:15:31 +0200
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 1 LIMIT 1[0m
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered tasks/show.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_nav.html.erb (2.5ms)
+Completed 200 OK in 198ms (Views: 184.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-07-06 16:15:35 +0200
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 1 AND `tasks`.`state` = 'to_do'[0m
+  Rendered partials/_to_do.html.erb (9.2ms)
+  [1m[36mTask Load (1.2ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 1 AND `tasks`.`state` = 'doing'[0m
+  Rendered partials/_doing.html.erb (4.8ms)
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 1 AND `tasks`.`state` = 'done'[0m
+  Rendered partials/_done.html.erb (3.7ms)
+  Rendered tasks/index.html.erb within layouts/application (26.2ms)
+  Rendered layouts/_nav.html.erb (7.9ms)
+Completed 200 OK in 238ms (Views: 218.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 16:15:44 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT `projects`.* FROM `projects` WHERE `projects`.`user_id` = 1[0m
+  [1m[36mTask Load (1.6ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 1[0m
+  Rendered pages/home.html.erb within layouts/application (26.8ms)
+  Rendered layouts/_nav.html.erb (2.6ms)
+Completed 200 OK in 360ms (Views: 330.9ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 16:16:38 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT `projects`.* FROM `projects` WHERE `projects`.`user_id` = 1[0m
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 1[0m
+  Rendered pages/home.html.erb within layouts/application (18.2ms)
+  Rendered layouts/_nav.html.erb (2.6ms)
+Completed 200 OK in 280ms (Views: 265.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2017-07-06 16:16:42 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  `projects`.* FROM `projects` WHERE `projects`.`id` = 1 LIMIT 1[0m
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 1[0m
+  Rendered projects/show.html.erb within layouts/application (10.9ms)
+  Rendered layouts/_nav.html.erb (4.0ms)
+Completed 200 OK in 184ms (Views: 173.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 16:17:50 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT `projects`.* FROM `projects` WHERE `projects`.`user_id` = 1[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 1[0m
+  Rendered pages/home.html.erb within layouts/application (19.9ms)
+  Rendered layouts/_nav.html.erb (2.5ms)
+Completed 200 OK in 301ms (Views: 284.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2017-07-06 16:17:52 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  `projects`.* FROM `projects` WHERE `projects`.`id` = 1 LIMIT 1[0m
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 1[0m
+  Rendered projects/show.html.erb within layouts/application (21.0ms)
+  Rendered layouts/_nav.html.erb (2.5ms)
+Completed 200 OK in 237ms (Views: 219.4ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-06 16:17:55 +0200
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT `projects`.* FROM `projects` WHERE `projects`.`user_id` = 1[0m
+  Rendered projects/index.html.erb within layouts/application (17.2ms)
+  Rendered layouts/_nav.html.erb (3.3ms)
+Completed 200 OK in 263ms (Views: 251.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 16:18:13 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT `projects`.* FROM `projects` WHERE `projects`.`user_id` = 1[0m
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 1[0m
+  Rendered pages/home.html.erb within layouts/application (28.2ms)
+  Rendered layouts/_nav.html.erb (2.6ms)
+Completed 200 OK in 350ms (Views: 323.3ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2017-07-06 16:19:11 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  `projects`.* FROM `projects` WHERE `projects`.`id` = 1 LIMIT 1[0m
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 1[0m
+  Rendered projects/show.html.erb within layouts/application (16.8ms)
+  Rendered layouts/_nav.html.erb (2.9ms)
+Completed 200 OK in 235ms (Views: 217.9ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/projects/1/edit" for 127.0.0.1 at 2017-07-06 16:19:12 +0200
+Processing by ProjectsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (8.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mProject Load (2.3ms)[0m  [1m[34mSELECT  `projects`.* FROM `projects` WHERE `projects`.`id` = 1 LIMIT 1[0m
+  Rendering projects/edit.html.erb within layouts/application
+  Rendered projects/_form.html.erb (35.9ms)
+  Rendered projects/edit.html.erb within layouts/application (43.5ms)
+  Rendered layouts/_nav.html.erb (3.1ms)
+Completed 200 OK in 284ms (Views: 257.6ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-07-06 16:19:17 +0200
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 1 AND `tasks`.`state` = 'to_do'[0m
+  Rendered partials/_to_do.html.erb (12.9ms)
+  [1m[36mTask Load (1.4ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 1 AND `tasks`.`state` = 'doing'[0m
+  Rendered partials/_doing.html.erb (5.5ms)
+  [1m[36mTask Load (1.4ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 1 AND `tasks`.`state` = 'done'[0m
+  Rendered partials/_done.html.erb (4.8ms)
+  Rendered tasks/index.html.erb within layouts/application (33.3ms)
+  Rendered layouts/_nav.html.erb (2.9ms)
+Completed 200 OK in 258ms (Views: 238.6ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2017-07-06 16:19:19 +0200
+Processing by TasksController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (45.5ms)
+  Rendered tasks/new.html.erb within layouts/application (49.8ms)
+Completed 500 Internal Server Error in 120ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (Association :project not found):
+     6:   	<%= f.input :description %>
+     7:   	<%= f.input :due_date %>
+     8:     <%= f.input :content %>
+     9:     <%= f.association :project %>
+    10:   </div>
+    11: 
+    12:   <div class="form-actions">
+  
+app/views/tasks/_form.html.erb:9:in `block in _app_views_tasks__form_html_erb___1755198957212122170_69924383220180'
+app/views/tasks/_form.html.erb:1:in `_app_views_tasks__form_html_erb___1755198957212122170_69924383220180'
+app/views/tasks/new.html.erb:3:in `_app_views_tasks_new_html_erb___3514347357087376715_22431780'
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (17.4ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.7ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (53.1ms)
+Started GET "/tasks/new" for 127.0.0.1 at 2017-07-06 16:20:19 +0200
+Processing by TasksController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (27.2ms)
+  Rendered tasks/new.html.erb within layouts/application (29.4ms)
+Completed 500 Internal Server Error in 90ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (Association :project not found):
+     6:   	<%= f.input :description %>
+     7:   	<%= f.input :due_date %>
+     8:     <%= f.input :content %>
+     9:     <%= f.association :project %>
+    10:   </div>
+    11: 
+    12:   <div class="form-actions">
+  
+app/views/tasks/_form.html.erb:9:in `block in _app_views_tasks__form_html_erb___1755198957212122170_69924250888120'
+app/views/tasks/_form.html.erb:1:in `_app_views_tasks__form_html_erb___1755198957212122170_69924250888120'
+app/views/tasks/new.html.erb:3:in `_app_views_tasks_new_html_erb___3514347357087376715_69924251001560'
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (16.4ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.7ms)
+  Rendering /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/calvin/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (51.3ms)
+Started GET "/tasks/new" for 127.0.0.1 at 2017-07-06 16:20:46 +0200
+Processing by TasksController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tasks/new.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT `projects`.* FROM `projects`[0m
+  Rendered tasks/_form.html.erb (75.6ms)
+  Rendered tasks/new.html.erb within layouts/application (78.0ms)
+  Rendered layouts/_nav.html.erb (5.6ms)
+Completed 200 OK in 392ms (Views: 323.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2017-07-06 16:22:15 +0200
+Processing by TasksController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tasks/new.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT `projects`.* FROM `projects`[0m
+  Rendered tasks/_form.html.erb (70.2ms)
+  Rendered tasks/new.html.erb within layouts/application (72.9ms)
+  Rendered layouts/_nav.html.erb (2.7ms)
+Completed 200 OK in 312ms (Views: 223.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 16:22:20 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT `projects`.* FROM `projects` WHERE `projects`.`user_id` = 1[0m
+  [1m[36mTask Load (2.4ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 1[0m
+  Rendered pages/home.html.erb within layouts/application (60.2ms)
+  Rendered layouts/_nav.html.erb (2.5ms)
+Completed 200 OK in 325ms (Views: 282.1ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2017-07-06 16:22:23 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT  `projects`.* FROM `projects` WHERE `projects`.`id` = 1 LIMIT 1[0m
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 1[0m
+  Rendered projects/show.html.erb within layouts/application (31.3ms)
+  Rendered layouts/_nav.html.erb (2.7ms)
+Completed 200 OK in 318ms (Views: 282.8ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-06 16:22:27 +0200
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT `projects`.* FROM `projects` WHERE `projects`.`user_id` = 1[0m
+  Rendered projects/index.html.erb within layouts/application (19.0ms)
+  Rendered layouts/_nav.html.erb (2.4ms)
+Completed 200 OK in 327ms (Views: 310.4ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-07-06 16:22:33 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Q9+XEkiy2gT5SzFgRZHVg/gKk2Wo02/9sGRgfY8I/q+YxHkTBtzuWWurdRukJB/0Gknt7W8oV8Bma1vO50CWyQ=="}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 43ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 16:22:33 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_nav.html.erb (3.7ms)
+Completed 200 OK in 238ms (Views: 232.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-07-06 16:22:37 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (26.4ms)
+  Rendered layouts/_nav.html.erb (2.8ms)
+Completed 200 OK in 285ms (Views: 282.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-07-06 16:22:45 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3tpBf85XC8VN2NRjbraGN/iveB2by7Kus0Wun3Z2Faa2F+AghHPb4orxHuuSzpb5j791FgF5JpLzCZODVawysw==", "user"=>{"email"=>"seidlecalvin@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'seidlecalvin@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('seidlecalvin@gmail.com', '$2a$11$m5b3bUSblSRAkHw9k3aJoenFu7igVwOJsnZ8IdHdz7aXNeVygxxKa', '2017-07-06 14:22:45', '2017-07-06 14:22:45')[0m
+  [1m[35m (24.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE `users` SET `sign_in_count` = 1, `current_sign_in_at` = '2017-07-06 14:22:45', `last_sign_in_at` = '2017-07-06 14:22:45', `current_sign_in_ip` = '127.0.0.1', `last_sign_in_ip` = '127.0.0.1' WHERE `users`.`id` = 2[0m
+  [1m[35m (27.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 469ms (ActiveRecord: 54.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 16:22:45 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT `projects`.* FROM `projects` WHERE `projects`.`user_id` = 2[0m
+  Rendered pages/home.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_nav.html.erb (3.7ms)
+Completed 200 OK in 270ms (Views: 260.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-06 16:22:58 +0200
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (6.0ms)[0m  [1m[34mSELECT `projects`.* FROM `projects` WHERE `projects`.`user_id` = 2[0m
+  Rendered projects/index.html.erb within layouts/application (22.0ms)
+  Rendered layouts/_nav.html.erb (3.8ms)
+Completed 200 OK in 324ms (Views: 296.1ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2017-07-06 16:23:02 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (27.4ms)
+  Rendered projects/new.html.erb within layouts/application (35.1ms)
+  Rendered layouts/_nav.html.erb (2.6ms)
+Completed 200 OK in 247ms (Views: 226.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2017-07-06 16:23:11 +0200
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pFzw2k3lZh22Z3RMeLGYQVPerYtfkgVSVFKLJcoV+jejKCBuK8fd98VCDmJpOcwgmNomca/qSNytwWLp9UBB3w==", "project"=>{"title"=>"test project", "description"=>"dsfsdfs", "content"=>"sdafsdf"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `projects` (`title`, `description`, `content`, `user_id`, `created_at`, `updated_at`) VALUES ('test project', 'dsfsdfs', 'sdafsdf', 2, '2017-07-06 14:23:11', '2017-07-06 14:23:11')[0m
+  [1m[35m (54.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects/2
+Completed 302 Found in 78ms (ActiveRecord: 55.7ms)
+
+
+Started GET "/projects/2" for 127.0.0.1 at 2017-07-06 16:23:11 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT  `projects`.* FROM `projects` WHERE `projects`.`id` = 2 LIMIT 1[0m
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 2[0m
+  Rendered projects/show.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_nav.html.erb (2.9ms)
+Completed 200 OK in 210ms (Views: 192.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-06 16:23:13 +0200
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT `projects`.* FROM `projects` WHERE `projects`.`user_id` = 2[0m
+  Rendered projects/index.html.erb within layouts/application (12.7ms)
+  Rendered layouts/_nav.html.erb (15.6ms)
+Completed 200 OK in 487ms (Views: 477.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/projects/2" for 127.0.0.1 at 2017-07-06 16:23:17 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  `projects`.* FROM `projects` WHERE `projects`.`id` = 2 LIMIT 1[0m
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 2[0m
+  Rendered projects/show.html.erb within layouts/application (18.8ms)
+  Rendered layouts/_nav.html.erb (4.8ms)
+Completed 200 OK in 309ms (Views: 270.8ms | ActiveRecord: 14.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-06 16:23:21 +0200
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (10.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT `projects`.* FROM `projects` WHERE `projects`.`user_id` = 2[0m
+  Rendered projects/index.html.erb within layouts/application (18.2ms)
+  Rendered layouts/_nav.html.erb (2.4ms)
+Completed 200 OK in 334ms (Views: 311.1ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-07-06 16:23:24 +0200
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 2 AND `tasks`.`state` = 'to_do'[0m
+  Rendered partials/_to_do.html.erb (5.3ms)
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 2 AND `tasks`.`state` = 'doing'[0m
+  Rendered partials/_doing.html.erb (5.0ms)
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 2 AND `tasks`.`state` = 'done'[0m
+  Rendered partials/_done.html.erb (4.7ms)
+  Rendered tasks/index.html.erb within layouts/application (24.2ms)
+  Rendered layouts/_nav.html.erb (2.4ms)
+Completed 200 OK in 238ms (Views: 217.5ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2017-07-06 16:23:25 +0200
+Processing by TasksController#new as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering tasks/new.html.erb within layouts/application
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT `projects`.* FROM `projects`[0m
+  Rendered tasks/_form.html.erb (50.5ms)
+  Rendered tasks/new.html.erb within layouts/application (56.8ms)
+  Rendered layouts/_nav.html.erb (2.4ms)
+Completed 200 OK in 267ms (Views: 256.5ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2017-07-06 16:23:54 +0200
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ho6WL+NmI5iom9yRy3Byc5vFeKJuJ93R87uT3Zb5ITirgGiBcpTC5Jk+PRNPWXjtExqesWsvBKGf1uqGOEvqeA==", "task"=>{"title"=>"test test etst", "description"=>"sdgvsfpjvgpsdfjvgjj", "due_date(1i)"=>"2017", "due_date(2i)"=>"7", "due_date(3i)"=>"6", "due_date(4i)"=>"14", "due_date(5i)"=>"23", "content"=>"iphiphpihpihpi", "project_id"=>"1"}, "commit"=>"Create Task"}
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Unpermitted parameters: description, project_id
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  Rendering tasks/new.html.erb within layouts/application
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT `projects`.* FROM `projects`[0m
+  Rendered tasks/_form.html.erb (43.6ms)
+  Rendered tasks/new.html.erb within layouts/application (47.0ms)
+  Rendered layouts/_nav.html.erb (2.4ms)
+Completed 200 OK in 359ms (Views: 301.3ms | ActiveRecord: 7.6ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2017-07-06 16:24:04 +0200
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qkKf+jfEv4O4HDt2BXq5337rOJGEsqodkS274J6pxHF/keECh9GPVbBQUWAxM6a1IYG6BoCfD78gxBWKcXHqBg==", "task"=>{"title"=>"test test etst", "description"=>"", "due_date(1i)"=>"2017", "due_date(2i)"=>"7", "due_date(3i)"=>"6", "due_date(4i)"=>"14", "due_date(5i)"=>"23", "content"=>"iphiphpihpihpi", "project_id"=>"1"}, "commit"=>"Create Task"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Unpermitted parameters: description, project_id
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  Rendering tasks/new.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT `projects`.* FROM `projects`[0m
+  Rendered tasks/_form.html.erb (126.7ms)
+  Rendered tasks/new.html.erb within layouts/application (135.8ms)
+  Rendered layouts/_nav.html.erb (2.8ms)
+Completed 200 OK in 376ms (Views: 338.6ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2017-07-06 16:24:11 +0200
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DB7t2X+6u4F1xRnIGj+E0yaACM2vtiWLa0uNJzjhWtbZzZMhz6+LV32Jc94udpu5eeqKWqubgCnaoiNN1zl0oQ==", "task"=>{"title"=>"test test etst", "description"=>"", "due_date(1i)"=>"2017", "due_date(2i)"=>"7", "due_date(3i)"=>"6", "due_date(4i)"=>"14", "due_date(5i)"=>"23", "content"=>"iphiphpihpihpi", "project_id"=>"2"}, "commit"=>"Create Task"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Unpermitted parameters: description, project_id
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  Rendering tasks/new.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT `projects`.* FROM `projects`[0m
+  Rendered tasks/_form.html.erb (72.3ms)
+  Rendered tasks/new.html.erb within layouts/application (78.7ms)
+  Rendered layouts/_nav.html.erb (2.3ms)
+Completed 200 OK in 342ms (Views: 305.5ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2017-07-06 16:24:30 +0200
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3Mexb9WoLgF8meSGrfwnGY6g5fzbNVll8r2RwxEZQEgJFM+XZb0e13TVjpCZtThz0cpna98Y/MdDVD+p/sFuPw==", "task"=>{"title"=>"test test etst", "description"=>"nhjvhvhhvhhvhvhv", "due_date(1i)"=>"2017", "due_date(2i)"=>"7", "due_date(3i)"=>"6", "due_date(4i)"=>"14", "due_date(5i)"=>"23", "content"=>"iphiphpihpihpi", "project_id"=>"2"}, "commit"=>"Create Task"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Unpermitted parameters: description, project_id
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  Rendering tasks/new.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT `projects`.* FROM `projects`[0m
+  Rendered tasks/_form.html.erb (73.6ms)
+  Rendered tasks/new.html.erb within layouts/application (83.9ms)
+  Rendered layouts/_nav.html.erb (2.5ms)
+Completed 200 OK in 351ms (Views: 314.2ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2017-07-06 16:24:35 +0200
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m93VSfPB31RO7cCfq/tS51qOlhui3I5SB56+iMcGcilODquxQ9Tvgkahqomfsk2NBeQUjKbxK/C2dxDiKN5cXg==", "task"=>{"title"=>"test test etst", "description"=>"", "due_date(1i)"=>"2017", "due_date(2i)"=>"7", "due_date(3i)"=>"6", "due_date(4i)"=>"14", "due_date(5i)"=>"23", "content"=>"iphiphpihpihpi", "project_id"=>""}, "commit"=>"Create Task"}
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Unpermitted parameters: description, project_id
+  [1m[35m (4.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  Rendering tasks/new.html.erb within layouts/application
+  [1m[36mProject Load (1.5ms)[0m  [1m[34mSELECT `projects`.* FROM `projects`[0m
+  Rendered tasks/_form.html.erb (74.4ms)
+  Rendered tasks/new.html.erb within layouts/application (80.6ms)
+  Rendered layouts/_nav.html.erb (3.7ms)
+Completed 200 OK in 380ms (Views: 279.7ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 16:24:39 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT `projects`.* FROM `projects` WHERE `projects`.`user_id` = 2[0m
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 2[0m
+  Rendered pages/home.html.erb within layouts/application (13.4ms)
+  Rendered layouts/_nav.html.erb (2.6ms)
+Completed 200 OK in 273ms (Views: 265.2ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-07-06 16:24:44 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sf0MWqN61FrFZYa4F8mZTCBlSC+LenZ8/nxabb680/RkLnKiE2/kjM0p7K4jgIYmfw/KuI9X095PlfQHUWT9gw=="}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 24ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 16:24:44 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_nav.html.erb (2.2ms)
+Completed 200 OK in 166ms (Views: 157.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-07-06 16:24:48 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (22.3ms)
+  Rendered layouts/_nav.html.erb (2.7ms)
+Completed 200 OK in 257ms (Views: 252.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-07-06 16:24:54 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NGdHKapn3WijD+Tw/GYljnUSembhLjy3ykL/VwkLE5LweOaDUgk1coueUKWNQbgNO53damh20x36wgmEoC2HTQ==", "user"=>{"email"=>"calvin@littlepig.cc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'calvin@littlepig.cc' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE `users` SET `current_sign_in_at` = '2017-07-06 14:24:55', `sign_in_count` = 2, `updated_at` = '2017-07-06 14:24:55' WHERE `users`.`id` = 1[0m
+  [1m[35m (28.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 312ms (ActiveRecord: 31.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 16:24:55 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (1.2ms)[0m  [1m[34mSELECT `projects`.* FROM `projects` WHERE `projects`.`user_id` = 1[0m
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 1[0m
+  Rendered pages/home.html.erb within layouts/application (22.8ms)
+  Rendered layouts/_nav.html.erb (2.3ms)
+Completed 200 OK in 346ms (Views: 322.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-06 16:25:05 +0200
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT `projects`.* FROM `projects` WHERE `projects`.`user_id` = 1[0m
+  Rendered projects/index.html.erb within layouts/application (14.6ms)
+  Rendered layouts/_nav.html.erb (2.6ms)
+Completed 200 OK in 325ms (Views: 309.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2017-07-06 16:25:13 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (29.6ms)
+  Rendered projects/new.html.erb within layouts/application (33.8ms)
+  Rendered layouts/_nav.html.erb (2.4ms)
+Completed 200 OK in 244ms (Views: 227.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2017-07-06 16:25:46 +0200
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AbY0KjLoeNRl+rUxb4KjWB0swhpWR4H6tFv5vIMPGaoBZXnxstl5/BOXlNUzAxLQpna85FTJSQORxDhUJoaYJA==", "project"=>{"title"=>"test project 2", "description"=>"this is a test project", "content"=>"test test etst etst test"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (4.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO `projects` (`title`, `description`, `content`, `user_id`, `created_at`, `updated_at`) VALUES ('test project 2', 'this is a test project', 'test test etst etst test', 1, '2017-07-06 14:25:46', '2017-07-06 14:25:46')[0m
+  [1m[35m (31.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects/3
+Completed 302 Found in 95ms (ActiveRecord: 37.7ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2017-07-06 16:25:46 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT  `projects`.* FROM `projects` WHERE `projects`.`id` = 3 LIMIT 1[0m
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 1[0m
+  Rendered projects/show.html.erb within layouts/application (10.2ms)
+  Rendered layouts/_nav.html.erb (4.0ms)
+Completed 200 OK in 255ms (Views: 243.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-06 16:25:58 +0200
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (2.0ms)[0m  [1m[34mSELECT `projects`.* FROM `projects` WHERE `projects`.`user_id` = 1[0m
+  Rendered projects/index.html.erb within layouts/application (24.4ms)
+  Rendered layouts/_nav.html.erb (2.6ms)
+Completed 200 OK in 376ms (Views: 345.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 16:26:02 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT `projects`.* FROM `projects` WHERE `projects`.`user_id` = 1[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 1[0m
+  Rendered pages/home.html.erb within layouts/application (13.8ms)
+  Rendered layouts/_nav.html.erb (2.6ms)
+Completed 200 OK in 248ms (Views: 231.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2017-07-06 16:26:16 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mProject Load (5.2ms)[0m  [1m[34mSELECT  `projects`.* FROM `projects` WHERE `projects`.`id` = 1 LIMIT 1[0m
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 1[0m
+  Rendered projects/show.html.erb within layouts/application (13.9ms)
+  Rendered layouts/_nav.html.erb (5.3ms)
+Completed 200 OK in 341ms (Views: 320.4ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-06 16:26:18 +0200
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT `projects`.* FROM `projects` WHERE `projects`.`user_id` = 1[0m
+  Rendered projects/index.html.erb within layouts/application (49.4ms)
+  Rendered layouts/_nav.html.erb (2.8ms)
+Completed 200 OK in 311ms (Views: 284.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 16:26:49 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT `projects`.* FROM `projects` WHERE `projects`.`user_id` = 1[0m
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 1[0m
+  Rendered pages/home.html.erb within layouts/application (23.7ms)
+  Rendered layouts/_nav.html.erb (2.3ms)
+Completed 200 OK in 367ms (Views: 340.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 16:27:32 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (6.0ms)[0m  [1m[34mSELECT `projects`.* FROM `projects` WHERE `projects`.`user_id` = 1[0m
+  [1m[36mTask Load (6.9ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 1[0m
+  Rendered pages/home.html.erb within layouts/application (30.3ms)
+  Rendered layouts/_nav.html.erb (2.8ms)
+Completed 200 OK in 267ms (Views: 236.0ms | ActiveRecord: 19.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-06 16:28:41 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT `projects`.* FROM `projects` WHERE `projects`.`user_id` = 1[0m
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks` WHERE `tasks`.`user_id` = 1[0m
+  Rendered pages/home.html.erb within layouts/application (17.8ms)
+  Rendered layouts/_nav.html.erb (2.4ms)
+Completed 200 OK in 265ms (Views: 237.9ms | ActiveRecord: 1.9ms)
+
+
